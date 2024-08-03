@@ -4,12 +4,12 @@ from twilio.rest import Client
 import smtplib
 
 # INFO TO SEND MESSAGE VIA EMAIL
-MY_EMAIL = "geaa00643@gmail.com"
-PASSWORD = "stshwbcqwctxdyco"
+MY_EMAIL = "email"
+PASSWORD = "password"
 
 # INFO TO SEND A MESSAGE VIA TEXT
-ACCOUNT_SID = "AC1f8ae4df7a706685d9211e91744eb6d9"
-AUTH_TOKEN = "[729096d8613b7f0803143d2da0ebaf84]"
+ACCOUNT_SID = "sid"
+AUTH_TOKEN = "token"
 
 PRICE_LIMIT = 1800
 
@@ -38,6 +38,6 @@ if product_price < PRICE_LIMIT:
         connection.login(user=MY_EMAIL, password=PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
-            to_addrs="obrikoci2@gmail.com",
+            to_addrs=MY_EMAIL,
             msg=f"Subject:‼️Low Price Alert on Amazon️ ‼️\n\n{product_name} is now ${product_price}!\nCheck it out now:{product_url}".encode("utf-8")
         )
